@@ -1,0 +1,63 @@
+### this request is to get back the registered user which will be empty at first
+GET http://localhost:8080/users
+
+### this request is to register a new user 
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+    "name" : "Arshad",
+    "email" : "arshadchowdhury46@gmail.com",
+    "password" : "123456",
+    "gender" : "male",
+    "age" : "25"
+    }
+
+### this request is to login using the email & password just saved above
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "email" : "arshadchowdhury46@gmail.com",
+    "password" : "123456"
+    }
+
+
+### this request is to insert Product Category
+POST  http://localhost:8080/insert_product_category
+Content-Type: application/json
+
+{
+    "category_name" : "Toys",
+    "category_description" : "This is a kid's toys section of the store."
+    }
+
+### this request is to get the Category list
+GET http://localhost:8080/product_categories
+
+### this request is made to add products
+POST http://localhost:8080/insert_product
+Content-Type: application/json
+
+{
+    "category_id" : "LER7742",
+    "name" : "choo choo train",
+    "image" : "chu chu train.jpg",
+    "description" : "Children can use their love of trains to help them learn counting and colors!",
+    "price" : "50$"
+    }
+
+### this request is to get all the products
+GET http://localhost:8080/all_products
+
+###
+POST http://localhost:8080/place_order
+Content-Type: application/json
+
+{
+    "user_id" : "arshad",
+    "product_id" : "LE123"
+}
+
+###
+GET http://localhost:8080/placed_orders
